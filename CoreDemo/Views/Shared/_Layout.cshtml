@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewBag.Title</title>
+
+    <!--开发环境-->
+    <environment include="Development">
+        <!--asp-href-include 将css下所有css 引用进来-->
+        <!--asp-href-exclude 不包含all.min.css-->
+        <link rel="stylesheet" asp-href-include="~/css/*" asp-href-exclude="~/css/all.min.css" />
+    </environment>
+
+    <!--生产环境-->
+    <environment exclude="Development">
+        <link rel="stylesheet" asp-href-include="~/css/all.min.css"  />
+    </environment>
+
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <!--img asp-append-version 避免缓存-->
+            <img asp-append-version="true" src="~/images/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            @ViewBag.Title
+        </a>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

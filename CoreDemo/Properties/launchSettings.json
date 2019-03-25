@@ -19,7 +19,8 @@
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development" //测试环境
+        //"ASPNETCORE_ENVIRONMENT": "Staging"  //生产环境
       },
       "applicationUrl": "http://localhost:58130/"
     }
